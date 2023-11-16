@@ -1,0 +1,49 @@
+{
+  "kind": "singleType",
+  "collectionName": "vinyard_pages",
+  "info": {
+    "singularName": "vinyard-page",
+    "pluralName": "vinyard-pages",
+    "displayName": "Страница Лозя",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "heroImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "vinyardPageLayout": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "dynamiczone",
+      "components": [
+        "global.image",
+        "global.paragraph",
+        "global.title-n-text"
+      ]
+    }
+  }
+}

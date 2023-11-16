@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_global_obem_i_broj",
+  "info": {
+    "displayName": "Обем и брой",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "volume": {
+      "type": "integer"
+    },
+    "bottlesProduced": {
+      "type": "integer"
+    }
+  }
+}

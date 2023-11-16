@@ -1,0 +1,49 @@
+{
+  "kind": "singleType",
+  "collectionName": "celler_pages",
+  "info": {
+    "singularName": "celler-page",
+    "pluralName": "celler-pages",
+    "displayName": "Страница Изба",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "heroImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "cellerPageLayout": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "dynamiczone",
+      "components": [
+        "global.title-n-text",
+        "global.image",
+        "global.paragraph"
+      ]
+    }
+  }
+}

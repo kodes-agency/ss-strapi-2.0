@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "wine_caps",
+  "info": {
+    "singularName": "wine-cap",
+    "pluralName": "wine-caps",
+    "displayName": "Видове тапи",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "capType": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
+    }
+  }
+}

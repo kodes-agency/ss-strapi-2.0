@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_cookies_cookie_types",
+  "info": {
+    "displayName": "cookieType",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "type": {
+      "type": "string"
+    }
+  }
+}

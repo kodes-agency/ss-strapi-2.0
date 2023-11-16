@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_global_text_editors",
+  "info": {
+    "displayName": "Текст (editor)",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    },
+    "heading": {
+      "type": "string"
+    }
+  }
+}

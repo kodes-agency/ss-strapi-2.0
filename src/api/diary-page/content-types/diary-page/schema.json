@@ -1,0 +1,33 @@
+{
+  "kind": "singleType",
+  "collectionName": "diary_pages",
+  "info": {
+    "singularName": "diary-page",
+    "pluralName": "diary-pages",
+    "displayName": "Страница Дневник",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "heroHeading": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "featuredStories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::diary.diary"
+    }
+  }
+}

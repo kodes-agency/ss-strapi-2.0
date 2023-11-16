@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_wine_profile_wine_informations",
+  "info": {
+    "displayName": "Технология и бележки",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "vinification": {
+      "type": "text"
+    },
+    "maturation": {
+      "type": "text"
+    },
+    "degustaion": {
+      "type": "text"
+    },
+    "food": {
+      "type": "text"
+    },
+    "passpordPDF": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

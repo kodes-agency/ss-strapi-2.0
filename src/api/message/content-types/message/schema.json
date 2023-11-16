@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "messages",
+  "info": {
+    "singularName": "message",
+    "pluralName": "messages",
+    "displayName": "Съобщения",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "contactPerson": {
+      "type": "string"
+    },
+    "companyName": {
+      "type": "string"
+    },
+    "phoneNumber": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "knowledge": {
+      "type": "boolean",
+      "default": false
+    },
+    "currentOffering": {
+      "type": "boolean",
+      "default": false
+    },
+    "businessActivity": {
+      "type": "string"
+    },
+    "interests": {
+      "type": "text"
+    }
+  }
+}

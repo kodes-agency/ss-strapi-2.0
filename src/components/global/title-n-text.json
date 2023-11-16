@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_global_title_n_texts",
+  "info": {
+    "displayName": "Заглавия с текст",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "minorHeading": {
+      "type": "string"
+    },
+    "majorHeading": {
+      "type": "string"
+    },
+    "text": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    },
+    "marker": {
+      "type": "string"
+    }
+  }
+}

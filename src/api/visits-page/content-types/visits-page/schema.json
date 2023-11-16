@@ -1,0 +1,50 @@
+{
+  "kind": "singleType",
+  "collectionName": "visits_pages",
+  "info": {
+    "singularName": "visits-page",
+    "pluralName": "visits-pages",
+    "displayName": "Страница Посещения",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "heroImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "visitsPageLayout": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "dynamiczone",
+      "components": [
+        "global.image",
+        "global.paragraph",
+        "global.text-editor",
+        "global.title-n-text"
+      ]
+    }
+  }
+}
