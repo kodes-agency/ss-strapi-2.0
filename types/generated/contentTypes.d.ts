@@ -2046,11 +2046,11 @@ export interface ApiProductProduct extends Schema.CollectionType {
     };
   };
   attributes: {
-    title: Attribute.String &
+    systemTitle: Attribute.String &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     regularPrice: Attribute.Decimal &
@@ -2072,11 +2072,24 @@ export interface ApiProductProduct extends Schema.CollectionType {
           localized: false;
         };
       }>;
-    vinas: Attribute.Relation<
-      'api::product.product',
-      'oneToMany',
-      'api::vina.vina'
-    >;
+    productName: Attribute.Component<'product.product-name', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    packageTitle: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    systemBarcode: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

@@ -96,6 +96,23 @@ export interface HomePageImgLink extends Schema.Component {
   };
 }
 
+export interface ProductProductName extends Schema.Component {
+  collectionName: 'components_product_product_names';
+  info: {
+    displayName: 'product';
+    description: '';
+  };
+  attributes: {
+    vintage: Attribute.String;
+    vina: Attribute.Relation<
+      'product.product-name',
+      'oneToOne',
+      'api::vina.vina'
+    >;
+    volume: Attribute.Decimal;
+  };
+}
+
 export interface WineProfileObemIBroj extends Schema.Component {
   collectionName: 'components_global_obem_i_broj';
   info: {
@@ -166,6 +183,7 @@ declare module '@strapi/types' {
       'global.text-editor': GlobalTextEditor;
       'global.title-n-text': GlobalTitleNText;
       'home-page.img-link': HomePageImgLink;
+      'product.product-name': ProductProductName;
       'wine-profile.obem-i-broj': WineProfileObemIBroj;
       'wine-profile.wine-awards': WineProfileWineAwards;
       'wine-profile.wine-details': WineProfileWineDetails;

@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_product_product_names",
+  "info": {
+    "displayName": "product",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "vintage": {
+      "type": "string"
+    },
+    "vina": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::vina.vina"
+    },
+    "volume": {
+      "type": "decimal"
+    }
+  }
+}

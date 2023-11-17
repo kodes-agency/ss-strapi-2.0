@@ -16,10 +16,10 @@
     }
   },
   "attributes": {
-    "title": {
+    "systemTitle": {
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       },
       "type": "string",
@@ -50,10 +50,32 @@
       },
       "type": "string"
     },
-    "vinas": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::vina.vina"
+    "productName": {
+      "displayName": "productName",
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "component": "product.product-name"
+    },
+    "packageTitle": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
+    },
+    "systemBarcode": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "string"
     }
   }
 }
