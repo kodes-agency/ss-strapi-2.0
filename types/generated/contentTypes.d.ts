@@ -2090,6 +2090,11 @@ export interface ApiProductProduct extends Schema.CollectionType {
           localized: false;
         };
       }>;
+    productType: Attribute.Relation<
+      'api::product.product',
+      'oneToOne',
+      'api::product-type.product-type'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -2109,6 +2114,52 @@ export interface ApiProductProduct extends Schema.CollectionType {
       'api::product.product',
       'oneToMany',
       'api::product.product'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiProductTypeProductType extends Schema.CollectionType {
+  collectionName: 'product_types';
+  info: {
+    singularName: 'product-type';
+    pluralName: 'product-types';
+    displayName: '\u041A\u0430\u0442\u0435\u0433\u043E\u0440\u0438\u044F \u041F\u0440\u043E\u0434\u0443\u043A\u0442\u0438';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    productType: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::product-type.product-type',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::product-type.product-type',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::product-type.product-type',
+      'oneToMany',
+      'api::product-type.product-type'
     >;
     locale: Attribute.String;
   };
@@ -2804,6 +2855,7 @@ declare module '@strapi/types' {
       'api::news-page.news-page': ApiNewsPageNewsPage;
       'api::policy.policy': ApiPolicyPolicy;
       'api::product.product': ApiProductProduct;
+      'api::product-type.product-type': ApiProductTypeProductType;
       'api::seo.seo': ApiSeoSeo;
       'api::single-diary-page.single-diary-page': ApiSingleDiaryPageSingleDiaryPage;
       'api::single-news-page.single-news-page': ApiSingleNewsPageSingleNewsPage;

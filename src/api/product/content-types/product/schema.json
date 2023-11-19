@@ -76,6 +76,11 @@
         }
       },
       "type": "string"
+    },
+    "productType": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::product-type.product-type"
     }
   }
 }
