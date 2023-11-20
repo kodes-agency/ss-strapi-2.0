@@ -50,13 +50,13 @@
       },
       "type": "string"
     },
-    "productName": {
+    "wine": {
       "displayName": "productName",
       "type": "component",
       "repeatable": true,
       "pluginOptions": {
         "i18n": {
-          "localized": false
+          "localized": true
         }
       },
       "component": "product.product-name"
@@ -75,7 +75,8 @@
           "localized": false
         }
       },
-      "type": "string"
+      "type": "string",
+      "required": false
     },
     "productType": {
       "type": "relation",

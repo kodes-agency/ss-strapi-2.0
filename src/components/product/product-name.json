@@ -16,6 +16,9 @@
     },
     "volume": {
       "type": "decimal"
+    },
+    "quantity": {
+      "type": "integer"
     }
   }
 }

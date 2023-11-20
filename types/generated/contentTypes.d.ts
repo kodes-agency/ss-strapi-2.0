@@ -2072,10 +2072,10 @@ export interface ApiProductProduct extends Schema.CollectionType {
           localized: false;
         };
       }>;
-    productName: Attribute.Component<'product.product-name', true> &
+    wine: Attribute.Component<'product.product-name', true> &
       Attribute.SetPluginOptions<{
         i18n: {
-          localized: false;
+          localized: true;
         };
       }>;
     packageTitle: Attribute.String &

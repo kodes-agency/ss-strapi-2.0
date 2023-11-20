@@ -110,6 +110,7 @@ export interface ProductProductName extends Schema.Component {
       'api::vina.vina'
     >;
     volume: Attribute.Decimal;
+    quantity: Attribute.Integer;
   };
 }
 

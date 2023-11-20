@@ -1,13 +1,14 @@
 const WooCommerceRestApi = require("@woocommerce/woocommerce-rest-api").default;
-// require('dotenv').config()
 
 module.exports = {
   async beforeCreate(event) {
+    let { data } = await event.params
+
     let product = {
-      name: event.params.data.systemTitle,
-      sku: event.params.data.systemBarcode,
-      regular_price: `${event.params.data.regularPrice}`,
-      sale_price: `${event.params.data.salePrice}`,
+      name: data.systemTitle,
+      sku: data.systemBarcode,
+      regular_price: `${data.regularPrice}`,
+      sale_price: `${data.salePrice}`,
       type: 'simple',
     }
 
@@ -19,31 +20,29 @@ module.exports = {
         version: 'wc/v3'
       });
 
-
-      await WooCommerce.post("products", product)
-      .then((response) => {
-        event.params.data.productCode = response?.data?.id
-      })
-      .catch((error) => {
-        console.log(error.response.data);
-      });
-
-
+      if(!data.productCode){
+        await WooCommerce.post("products", product)
+        .then((response) => {
+          data.productCode = response.data.id
+        })
+        .catch((error) => {
+          console.log(error.response.data);
+        });
+      }
     } catch(err){
       console.log(err)
     }
   },
 
   async beforeUpdate(event) {
+    let { data } = await event.params
     let product = {
-      name: event.params.data.systemTitle,
-      sku: event.params.data.systemBarcode,
+      name: data.systemTitle,
+      sku: data.systemBarcode,
       type: 'simple',
-      regular_price: `${event.params.data.regularPrice}`,
-      sale_price: `${event.params.data.salePrice}`
+      regular_price: `${data.regularPrice}`,
+      sale_price: `${data.salePrice}`
     }
-
-    console.log(event.params.data)
 
     try {
       const WooCommerce = new WooCommerceRestApi({
@@ -53,16 +52,17 @@ module.exports = {
         version: 'wc/v3'
       });
 
-      await WooCommerce.put(`products/${event.params.data.productCode}`, product)
-      .then((response) => {
-      })
-      .catch((error) => {
-        console.log(error.response.data);
-      });
-
+      if(data.productCode){
+        await WooCommerce.put(`products/${data.productCode}`, product)
+        .then((response) => {
+        })
+        .catch((error) => {
+          console.log(error.response.data);
+        });
+      }
 
     } catch(err){
       console.log(err)
     }
-  },
+  }
 }
