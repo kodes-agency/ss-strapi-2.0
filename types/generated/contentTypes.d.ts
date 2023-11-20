@@ -2214,6 +2214,76 @@ export interface ApiSeoSeo extends Schema.SingleType {
   };
 }
 
+export interface ApiShopPageShopPage extends Schema.SingleType {
+  collectionName: 'shop_pages';
+  info: {
+    singularName: 'shop-page';
+    pluralName: 'shop-pages';
+    displayName: 'shopPage';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    heroHeading: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    heroSubheading: Attribute.Text &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    paymentInfoButton: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    deliveryInfoButton: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    infoTab: Attribute.Component<'shop-page.shop-page-info-tab', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::shop-page.shop-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::shop-page.shop-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::shop-page.shop-page',
+      'oneToMany',
+      'api::shop-page.shop-page'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiSingleDiaryPageSingleDiaryPage extends Schema.SingleType {
   collectionName: 'single_diary_pages';
   info: {
@@ -2857,6 +2927,7 @@ declare module '@strapi/types' {
       'api::product.product': ApiProductProduct;
       'api::product-type.product-type': ApiProductTypeProductType;
       'api::seo.seo': ApiSeoSeo;
+      'api::shop-page.shop-page': ApiShopPageShopPage;
       'api::single-diary-page.single-diary-page': ApiSingleDiaryPageSingleDiaryPage;
       'api::single-news-page.single-news-page': ApiSingleNewsPageSingleNewsPage;
       'api::single-wine-page.single-wine-page': ApiSingleWinePageSingleWinePage;

@@ -114,6 +114,24 @@ export interface ProductProductName extends Schema.Component {
   };
 }
 
+export interface ShopPageShopPageInfoTab extends Schema.Component {
+  collectionName: 'components_shop_page_shop_page_info_tabs';
+  info: {
+    displayName: 'shopPageInfoTab';
+  };
+  attributes: {
+    tabHeading: Attribute.String;
+    tabContent: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'light';
+        }
+      >;
+  };
+}
+
 export interface WineProfileObemIBroj extends Schema.Component {
   collectionName: 'components_global_obem_i_broj';
   info: {
@@ -185,6 +203,7 @@ declare module '@strapi/types' {
       'global.title-n-text': GlobalTitleNText;
       'home-page.img-link': HomePageImgLink;
       'product.product-name': ProductProductName;
+      'shop-page.shop-page-info-tab': ShopPageShopPageInfoTab;
       'wine-profile.obem-i-broj': WineProfileObemIBroj;
       'wine-profile.wine-awards': WineProfileWineAwards;
       'wine-profile.wine-details': WineProfileWineDetails;
