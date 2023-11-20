@@ -2095,6 +2095,13 @@ export interface ApiProductProduct extends Schema.CollectionType {
       'oneToOne',
       'api::product-type.product-type'
     >;
+    slug: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

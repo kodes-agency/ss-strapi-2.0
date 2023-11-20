@@ -82,6 +82,15 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::product-type.product-type"
+    },
+    "slug": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "string",
+      "required": true
     }
   }
 }
