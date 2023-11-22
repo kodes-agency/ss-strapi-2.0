@@ -2149,6 +2149,12 @@ export interface ApiProductTypeProductType extends Schema.CollectionType {
           localized: true;
         };
       }>;
+    filterName: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -2263,6 +2269,36 @@ export interface ApiShopPageShopPage extends Schema.SingleType {
         };
       }>;
     infoTab: Attribute.Component<'shop-page.shop-page-info-tab', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    heroImage: Attribute.Media &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    filterWineType: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    filterProductType: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    filterVintage: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    filterVolume: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

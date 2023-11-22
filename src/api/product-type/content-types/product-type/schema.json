@@ -23,6 +23,14 @@
         }
       },
       "type": "string"
+    },
+    "filterName": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "string"
     }
   }
 }
