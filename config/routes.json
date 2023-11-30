@@ -1,0 +1,9 @@
+{
+  "routes": [
+    {
+      "method": "POST",
+      "path": "/webhook-receiver",
+      "handler": "WebhookReceiver.webhookHandler"
+    }
+  ]
+}
